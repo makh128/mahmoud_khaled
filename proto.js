@@ -37,7 +37,7 @@ window.onscroll = () => {
       sec.classList.remove("show-animate");
     }
   });
-  
+
   let header = document.querySelector(".header");
   header.classList.toggle("sticky", window.scrollY > 100);
   //remove toggle icon and navbar when i click navbar links (scroll)
@@ -64,38 +64,91 @@ readMore.addEventListener("click", function () {
   if (readMore.classList.contains("clicked")) {
     readMore.textContent = "Show Less";
   } else {
-    readMore.textContent = 'Read More';
+    readMore.textContent = "Read More";
   }
-
-})
+});
 
 // skills section
 // change span progress value
 let spansProg = document.querySelectorAll(".bar span");
 spansProg.forEach((span) => {
   let widthValue = span.style.width;
-  span.setAttribute("data-progress", widthValue)
+  span.setAttribute("data-progress", widthValue);
 });
 
 // show popup when form is correct
-let inputs = document.querySelectorAll("form input");
+let inputs = document.querySelectorAll("#contact-form input");
 let popupCon = document.querySelector(".popup-container");
 let popupBtn = document.querySelector(".popup-btn");
-let form = document.querySelector("form");
-let textArea = document.querySelector("textarea");
+let form = document.querySelector("#contact-form");
+let textArea = document.querySelector("#message");
+let submitBtn = document.querySelector("#submitBtn");
 
+function updateSubmitState() {
+  const allFilled =
+    document.getElementById("fullName").value.trim() &&
+    document.getElementById("email").value.trim() &&
+    document.getElementById("mobile").value.trim() &&
+    document.getElementById("subject").value.trim() &&
+    document.getElementById("message").value.trim();
+  submitBtn.disabled = !allFilled;
+}
 
-form.addEventListener("submit", function (e) {
-    inputs.forEach((input) => {
-      if (input.value !== "") {
-        popupCon.classList.add("open-popup");
-        e.preventDefault()
-        input.value = '';
-        textArea.value = '';
-      }
-    })
-})
+// Initialize state and bind inputs for realtime validation
+["fullName", "email", "mobile", "subject", "message"].forEach((id) => {
+  const el = document.getElementById(id);
+  el.addEventListener("input", updateSubmitState);
+});
+updateSubmitState();
+
+async function submitContactForm(payload) {
+  const endpoint = "/api/contact";
+  const res = await fetch(endpoint, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+  });
+  const data = await res.json().catch(() => ({}));
+  return { ok: res.ok, status: res.status, data };
+}
+
+form.addEventListener("submit", async function (e) {
+  e.preventDefault();
+
+  const payload = {
+    fullName: document.getElementById("fullName").value.trim(),
+    email: document.getElementById("email").value.trim(),
+    mobile: document.getElementById("mobile").value.trim(),
+    subject: document.getElementById("subject").value.trim(),
+    message: document.getElementById("message").value.trim(),
+  };
+
+  try {
+    const originalText = submitBtn.textContent;
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Sending...";
+
+    const result = await submitContactForm(payload);
+
+    if (result.ok && result.data && result.data.success) {
+      popupCon.classList.add("open-popup");
+      inputs.forEach((input) => (input.value = ""));
+      textArea.value = "";
+      updateSubmitState();
+    } else if (result.status === 400 && result.data && result.data.errors) {
+      const msg = Object.values(result.data.errors).join("\n");
+      alert(msg || "Please check your inputs.");
+    } else {
+      alert((result.data && result.data.error) || "Failed to send message.");
+    }
+  } catch (err) {
+    alert("Network error. Please try again later.");
+  } finally {
+    submitBtn.textContent = "Submit";
+    updateSubmitState();
+  }
+});
 
 popupBtn.addEventListener("click", () => {
   popupCon.classList.add("close-popup");
-})
+});
