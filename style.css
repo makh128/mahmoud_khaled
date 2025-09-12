@@ -34,6 +34,8 @@ body {
   font-size: 2.5rem;
   /* padding-bottom: 0.5rem; */
   color: var(--main-color);
+  position: relative;
+  display: inline-block;
 }
 .header {
   position: fixed;
@@ -466,7 +468,6 @@ span {
 }
 
 .skills-column .title {
-
   position: relative;
   display: inline-block;
   letter-spacing: 1px;
@@ -547,7 +548,7 @@ span {
 }
 
 /* start contact section  */
-.my-contact-data{
+.my-contact-data {
   margin-top: 2rem;
 }
 .contact {
@@ -802,7 +803,7 @@ section:nth-child(odd) .animate.scroll {
   animation-delay: calc(0.3s * var(--i));
 }
 
-.dev-name{
+.dev-name {
   color: var(--main-color);
   font-weight: 700;
 }
