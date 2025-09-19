@@ -19,15 +19,15 @@ export default function About() {
           <span className="animate scroll" style={{ ["--i" as any]: 3 }}></span>
         </h3>
         <div className="paragraphs">
-          <p>
-            As a dedicated Front-End Developer, I special ize in creating modern,
+          <p style={{ lineHeight: "28px" }}>
+            As a dedicated Front-End Developer, I specialize in creating modern,
             responsive, and user-friendly web applications using cutting-edge
-            technologies. My expertise includes crafting pixel-perfect designs
-            with CSS & CSS3, Bootstrap, React Bootstrap, and MUI to ensure
-            visually appealing and responsive interfaces. I leverage JavaScript
-            and TypeScript to build dynamic and scalable applications, with a
-            strong focus on React.js for creating interactive and efficient user
-            experiences. Additionally, I utilize React Query for seamless data
+            technologies. I leverage JavaScript and TypeScript to build dynamic
+            and scalable applications, with a strong focus on React.js for
+            creating interactive and efficient user experiences.My expertise
+            includes crafting pixel-perfect designs with CSS & CSS3, Bootstrap,
+            React Bootstrap, and MUI to ensure visually appealing and responsive
+            interfaces. Additionally, I utilize React Query for seamless data
             fetching and state management, along with Redux & Redux Toolkit to
             manage complex application states effectively. My goal is to deliver
             high-quality, performant, and maintainable solutions that meet both
@@ -44,20 +44,19 @@ export default function About() {
           </p>
           <span className="animate scroll" style={{ ["--i" as any]: 4 }}></span>
         </div>
-        <div className="btn-box btns">
+        {/* <div className="btn-box btns">
           <a
             href="#about"
             className="btn"
             id="red-more"
-            onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
-              e.preventDefault();
+            onClick={() => {
               setExpanded((v: boolean) => !v);
             }}
           >
             {expanded ? "Show Less" : "Read More"}
           </a>
           <span className="animate scroll" style={{ ["--i" as any]: 5 }}></span>
-        </div>
+        </div> */}
       </div>
     </section>
   );

@@ -2,12 +2,14 @@ import { useEffect, useState } from "react";
 
 export default function Hero() {
   const [showTop, setShowTop] = useState<boolean>(false);
+
   useEffect(() => {
     const onScroll = () => setShowTop(window.scrollY >= 200);
     window.addEventListener("scroll", onScroll);
     onScroll();
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
   return (
     <section className="home show-animate" id="home">
       {showTop && (

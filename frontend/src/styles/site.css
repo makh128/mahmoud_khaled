@@ -355,7 +355,7 @@ span {
   font-size: 2rem;
 }
 .about.active .paragraphs .hidden-para {
-  height: 150px;
+  height: 100px;
 }
 
 .btn-box.btns {
@@ -371,7 +371,7 @@ span {
 .education {
   display: flex;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
   flex-direction: column;
   min-height: 100vh;
   padding-bottom: 5rem;
@@ -555,6 +555,7 @@ span {
   text-align: center;
   min-height: 100vh;
   padding-bottom: 3rem;
+  background-color: var(--second-bg-color);
 }
 .contact-data {
   display: flex;
@@ -702,7 +703,6 @@ span {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  background-color: var(--second-bg-color);
   padding: 2rem 9%;
 }
 

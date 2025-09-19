@@ -13,18 +13,18 @@ export default function Skills() {
         items: [
           "ReactJs",
           "React Query",
-          "JavaScript",
           "TypeScript",
+          "JavaScript",
           "OOP",
           "Redux & Redux Toolkit",
           "Axios",
           "Vite",
+          "MUI",
+          "React Bootstrap",
+          "Tailwind CSS",
+          "Bootstrap",
           "HTML & HTML5",
           "CSS & CSS3",
-          "Bootstrap",
-          "React Bootstrap",
-          "MUI",
-          "Tailwind CSS",
         ],
       },
       {
@@ -63,6 +63,7 @@ export default function Skills() {
     ],
     []
   );
+
   return (
     <section className="skills" id="skills">
       <h2 className="heading">

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 function useActiveSection() {
   const [activeId, setActiveId] = useState<string>("home");
+
   useEffect(() => {
     const handler = () => {
       const sections = Array.from(document.querySelectorAll("section"));
@@ -23,15 +24,18 @@ function useActiveSection() {
     handler();
     return () => window.removeEventListener("scroll", handler);
   }, []);
+
   return activeId;
 }
 
 export default function Navbar() {
   const activeId = useActiveSection();
   const [open, setOpen] = useState<boolean>(false);
+
   useEffect(() => {
     setOpen(false);
   }, [activeId]);
+
   return (
     <header className="header">
       <div className="logo">
@@ -52,9 +56,6 @@ export default function Navbar() {
         <a href="#about" className={activeId === "about" ? "active" : ""}>
           About
         </a>
-        {/* <a href="#projects" className={activeId === "projects" ? "active" : ""}>
-          Projects
-        </a> */}
         <a
           href="#education"
           className={activeId === "education" ? "active" : ""}
@@ -63,6 +64,9 @@ export default function Navbar() {
         </a>
         <a href="#skills" className={activeId === "skills" ? "active" : ""}>
           Skills
+        </a>
+        <a href="#projects" className={activeId === "projects" ? "active" : ""}>
+          Projects
         </a>
         <a href="#contact" className={activeId === "contact" ? "active" : ""}>
           Contact
