@@ -88,7 +88,7 @@ section {
   display: flex;
   align-items: center;
   padding: 0 9%;
-  background: url(/images/home.jpg) no-repeat center center/ cover;
+  /* background: url(/images/myPhoto.jpg) no-repeat center center/ cover; */
 }
 .home-imageHover {
   position: absolute;
@@ -98,10 +98,15 @@ section {
   height: 100%;
   opacity: 0.8;
   transform: 3s;
+  background-color: var(--main-color);
+  border-radius: 100% 0% 47% 53% / 46% 0% 100% 54%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden !important;
+  z-index: 1;
 }
-.home-imageHover:hover {
-  animation: home-animate 4s infinite ease-in-out;
-}
+
 .home-content {
   max-width: 60rem;
   z-index: 99;
@@ -291,12 +296,7 @@ span {
   text-align: center;
   transition: 0.5s;
 }
-.about-image img {
-  width: 90%;
-  border-radius: 50%;
-  border: 0.2rem solid var(--main-color);
-  transition: 0.5s;
-}
+
 .about-image .circle-span {
   position: absolute;
   top: 50%;

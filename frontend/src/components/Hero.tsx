@@ -1,3 +1,4 @@
+import { Box } from "@mui/material";
 import { useEffect, useState } from "react";
 
 export default function Hero() {
@@ -61,7 +62,15 @@ export default function Hero() {
           <span className="animate" style={{ ["--i" as any]: 6 }}></span>
         </div>
       </div>
-      <div className="home-imageHover"></div>
+      <div className="home-imageHover">
+        <Box sx={{ height: "80%", overflow: "hidden", zIndex: "-1" }}>
+          <img
+            src="/images/MyPhoto5.png"
+            alt="Mahmoud Khaled"
+            style={{ width: "100%", height: "100%" }}
+          />
+        </Box>
+      </div>
       <span className="animate show-img" style={{ ["--i" as any]: 7 }}></span>
     </section>
   );

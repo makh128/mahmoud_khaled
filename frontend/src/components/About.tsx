@@ -1,3 +1,4 @@
+import { Box } from "@mui/material";
 import { useState } from "react";
 
 export default function About() {
@@ -9,7 +10,21 @@ export default function About() {
         <span className="animate scroll" style={{ ["--i" as any]: 1 }}></span>
       </h1>
       <div className="about-image">
-        <img src="/images/about.jpg" />
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "flex-end",
+            justifyContent: "center",
+            width: "80%",
+            borderRadius: "50%",
+            overflow: "hidden",
+            backgroundColor: " var(--main-color)",
+            transition: "0.5s",
+            pt: 2,
+          }}
+        >
+          <img src="/images/MyPhoto5.png" style={{ width: "100%" }} />
+        </Box>
         <span className="circle-span"></span>
         <span className="animate scroll" style={{ ["--i" as any]: 2 }}></span>
       </div>
