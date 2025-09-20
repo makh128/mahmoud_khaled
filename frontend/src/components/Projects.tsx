@@ -1,4 +1,5 @@
-import { Typography } from "@mui/material";
+import { Box, IconButton, Tooltip, Typography, Zoom } from "@mui/material";
+import CallMadeRoundedIcon from "@mui/icons-material/CallMadeRounded";
 
 export default function Projects() {
   const Projects = [
@@ -6,6 +7,7 @@ export default function Projects() {
       name: "Expertex.ai",
       description:
         "Expertex AI solution helps content creators and businesses create, monitor, and automate high-quality digital content.",
+      url: "https://expertex.ai/",
       features: [
         {
           title: "Developed the main chat interface",
@@ -43,19 +45,11 @@ export default function Projects() {
         },
       ],
     },
-    {
-      name: "Expertex.ai",
-      description:
-        "An advanced AI collaboration platform that provides text, image, video, and voice generation suites, a workflow system, and a shared library for managing content.",
-      features: [
-        {
-          title: "Developed the main chat interface",
-          details: ["Ensuring a smooth user experience for AI interactions."],
-        },
-      ],
-    },
   ];
 
+  const goToProjectWebsite = (url: string) => {
+    window.open(url, "_blank", "noopener,noreferrer");
+  };
   return (
     <section className="education" id="projects">
       <h1 className="heading">
@@ -68,7 +62,43 @@ export default function Projects() {
             {Projects.map((n) => (
               <div className="education-content" key={n.name}>
                 <div className="content">
-                  <h3>{n.name}</h3>
+                  <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+                    <h3>{n.name}</h3>
+                    <Tooltip
+                      title={`Go to ${n.name}`}
+                      placement="right"
+                      arrow
+                      slots={{
+                        transition: Zoom,
+                      }}
+                      slotProps={{
+                        tooltip: {
+                          sx: {
+                            backgroundColor: "var(--bg-color)",
+                            fontSize: "1.2rem",
+                          },
+                        },
+                        arrow: {
+                          sx: {
+                            color: "var(--bg-color)",
+                          },
+                        },
+                      }}
+                    >
+                      <IconButton
+                        sx={{
+                          color: "var(--text-color)",
+                          fontSize: "1.5rem",
+                          "&:hover": {
+                            color: "var(--main-color)",
+                          },
+                        }}
+                        onClick={() => goToProjectWebsite(n.url)}
+                      >
+                        <CallMadeRoundedIcon />
+                      </IconButton>
+                    </Tooltip>
+                  </Box>
                   <Typography sx={{ mt: 1 }}>{n.description}</Typography>
                   <ol style={{ marginTop: "8px", paddingLeft: "20px" }}>
                     {n.features.map((f, idx) => (
