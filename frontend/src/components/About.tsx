@@ -1,10 +1,8 @@
 import { Box } from "@mui/material";
-import { useState } from "react";
 
 export default function About() {
-  const [expanded, setExpanded] = useState<boolean>(false);
   return (
-    <section className={`about ${expanded ? "active" : ""}`} id="about">
+    <section className="about" id="about">
       <h1 className="heading">
         About <span>Me</span>
         <span className="animate scroll" style={{ ["--i" as any]: 1 }}></span>
@@ -23,7 +21,7 @@ export default function About() {
             pt: 2,
           }}
         >
-          <img src="/images/MyPhoto5.png" style={{ width: "100%" }} />
+          <img src="/images/MyPhoto5.webp" style={{ width: "100%" }} />
         </Box>
         <span className="circle-span"></span>
         <span className="animate scroll" style={{ ["--i" as any]: 2 }}></span>
@@ -35,18 +33,15 @@ export default function About() {
         </h3>
         <div className="paragraphs">
           <p style={{ lineHeight: "28px" }}>
-            As a dedicated Front-End Developer, I specialize in creating modern,
-            responsive, and user-friendly web applications using cutting-edge
-            technologies. I leverage JavaScript and TypeScript to build dynamic
-            and scalable applications, with a strong focus on React.js for
-            creating interactive and efficient user experiences.My expertise
-            includes crafting pixel-perfect designs with CSS & CSS3, Bootstrap,
-            React Bootstrap, and MUI to ensure visually appealing and responsive
-            interfaces. Additionally, I utilize React Query for seamless data
-            fetching and state management, along with Redux & Redux Toolkit to
-            manage complex application states effectively. My goal is to deliver
-            high-quality, performant, and maintainable solutions that meet both
-            user and business needs.
+            Frontend Engineer with hands-on experience building scalable,
+            production-grade React and TypeScript applications. Proven track
+            record of delivering feature-rich SPA platforms (AI Tooling, Brand
+            Monitoring, Admin Dashboards) using modern tooling including Vite,
+            TanStack React Query, Tailwind CSS, Radix UI, and Material UI.
+            Comfortable working across the full frontend stack — from
+            architecture design and API integration to CI/CD pipelines with
+            Docker and Nginx. Contributor to multi-developer projects following
+            Domain-Driven Design and Feature-First architectural patterns.
           </p>
           <p className="hidden-para">
             To streamline development and collaboration, I work with a variety
@@ -59,19 +54,6 @@ export default function About() {
           </p>
           <span className="animate scroll" style={{ ["--i" as any]: 4 }}></span>
         </div>
-        {/* <div className="btn-box btns">
-          <a
-            href="#about"
-            className="btn"
-            id="red-more"
-            onClick={() => {
-              setExpanded((v: boolean) => !v);
-            }}
-          >
-            {expanded ? "Show Less" : "Read More"}
-          </a>
-          <span className="animate scroll" style={{ ["--i" as any]: 5 }}></span>
-        </div> */}
       </div>
     </section>
   );

@@ -29,15 +29,13 @@ export default function Hero() {
           <span className="animate" style={{ ["--i" as any]: 2 }}></span>
         </h1>
         <div className="text-animate">
-          <h3>Frontend Developer</h3>
+          <h3>Frontend Engineer</h3>
           <span className="animate" style={{ ["--i" as any]: 3 }}></span>
         </div>
         <p>
-          Hi, I'm <span className="dev-name">Mahmoud Khaled</span>, a passionate
-          <span className="dev-name"> Front-End Developer</span> specializing in
-          building modern, responsive, and user-friendly web applications. With
-          a strong focus on React.js, I bring ideas to life by crafting seamless
-          and interactive user experiences.
+          Frontend Engineer with hands-on experience building scalable, 
+          production-grade React and TypeScript applications. Specializing in 
+          modern AI platforms, brand monitoring, and complex admin dashboards.
           <span className="animate" style={{ ["--i" as any]: 4 }}></span>
         </p>
         <div className="btn-box">
@@ -65,7 +63,7 @@ export default function Hero() {
       <div className="home-imageHover">
         <Box sx={{ height: "80%", overflow: "hidden", zIndex: "-1" }}>
           <img
-            src="/images/MyPhoto5.png"
+            src="/images/MyPhoto5.webp"
             alt="Mahmoud Khaled"
             style={{ width: "100%", height: "100%" }}
           />

@@ -9,7 +9,6 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-
 /* :root {
   --bg-color: #0d1b1e;
   --second-bg-color: #1b2a2f;
@@ -23,13 +22,13 @@
   --text-color: #f8eaea;
   --main-color: #e50914;
   } */
-  
-  :root {
-    --bg-color: #081b29;
-    --second-bg-color: #112e42;
-    --text-color: #ededed;
-    --main-color: #00abf0;
-  }
+
+:root {
+  --bg-color: #081b29;
+  --second-bg-color: #112e42;
+  --text-color: #ededed;
+  --main-color: #00abf0;
+}
 html {
   font-size: 62.5%;
   overflow-x: hidden;
@@ -134,8 +133,8 @@ section {
   font-weight: 700;
 }
 .home-content .text-animate {
-  width: 30.8rem;
   position: relative;
+  width: fit-content;
 }
 .home-content .text-animate h3 {
   font-size: 3.2rem;
@@ -462,6 +461,8 @@ span {
 .education-content .content p {
   font-size: 1.5rem;
   padding-top: 0.5rem;
+  text-align: justify;
+  line-height: 1.5;
 }
 
 /* start skills section  */
@@ -477,28 +478,36 @@ span {
   display: flex;
   flex-wrap: wrap;
   gap: 5rem;
+  align-items: stretch;
 }
 .skills-row .skills-column {
-  flex: 1 1 20rem;
+  flex: 1 1 25rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .skills-column .title {
   position: relative;
   display: inline-block;
   letter-spacing: 1px;
-  font-size: 2.8rem;
+  font-size: 2.2rem;
   margin: 0 0 1.5rem;
 }
 .skills-box {
   position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 .skills-box .skills-content {
   position: relative;
   border: 0.2rem solid var(--main-color);
   border-radius: 0.6rem;
-  padding: 0.5rem 1.5rem;
+  padding: 1rem 2rem;
   overflow: hidden;
   z-index: 1;
+  text-align: left;
+  flex: 1;
 }
 .skills-box .skills-content::before {
   position: absolute;
@@ -515,13 +524,12 @@ span {
   width: 100%;
 }
 .skills-content .progress {
-  padding: 1rem 0;
+  padding: 0.5rem 0;
 }
 .progress h3 {
-  font-size: 1.7rem;
-  display: flex;
-  justify-content: space-between;
-  font-weight: 700;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.4;
 }
 
 .skills-content .progress .bar {
@@ -857,6 +865,16 @@ section:nth-child(odd) .animate.scroll {
   #menu-icon {
     display: block;
   }
+  .contact-data {
+    flex-direction: column;
+    margin-right: 0;
+  }
+  .my-contact-data {
+    margin-bottom: 4rem;
+  }
+  .my-contact-data .address {
+    padding-left: 0;
+  }
   .nav-bar {
     position: absolute;
     top: 100%;
@@ -902,9 +920,33 @@ section:nth-child(odd) .animate.scroll {
     transition-delay: 0.25fs;
   }
   .home-imageHover {
-    background-color: var(--bg-color);
-    opacity: 0.8;
-    z-index: -1;
+    display: none;
+  }
+  .home-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    max-width: 100%;
+  }
+  .home-content h1 {
+    font-size: 5rem;
+  }
+  .home-content .text-animate {
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+  }
+  .home-content .btn-box {
+    justify-content: center;
+    width: 100%;
+  }
+  .home-sci {
+    justify-content: center;
+    width: 100%;
+    bottom: 4rem;
   }
   @keyframes home-animate {
     from {
@@ -951,9 +993,6 @@ section:nth-child(odd) .animate.scroll {
   }
   .education {
     padding: 10rem 4% 5rem 5%;
-  }
-  .contact form .input-box .input-field {
-    width: 100%;
   }
   .about.active .paragraphs p {
     font-size: 1.5rem;

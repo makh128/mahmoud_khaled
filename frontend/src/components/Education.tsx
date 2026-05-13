@@ -61,17 +61,26 @@ export default function Education() {
             <div className="education-content">
               <div className="content">
                 <div className="year">
-                  <i className="fa-regular fa-calendar"></i> Feb 2024 - Present
+                  <i className="fa-regular fa-calendar"></i> January 2026 - Present
                 </div>
-                <h3>Frontend Developer - ExpertexAi</h3>
+                <h3>Frontend Engineer - Skillizer LLC</h3>
                 <p>
-                  Front-End Developer at ExpertexAi, focused on building modern,
-                  responsive, and user-friendly web applications. I work mainly
-                  with React.js, TypeScript, and JavaScript, and I use tools
-                  like MUI, Bootstrap, and CSS3 to create clean and attractive
-                  user interfaces. My goal is to build fast, reliable, and
-                  easy-to-maintain web apps that meet both user and business
-                  needs.
+                  Lead the development of the Lintari platform, focusing on modern AI-powered brand monitoring. 
+                  Participate in Agile (Scrum) workflows using Jira and ClickUp. Optimized global application 
+                  performance via Azure Front Door and CDN. Managed real-time messaging with Azure SignalR.
+                </p>
+              </div>
+            </div>
+            <div className="education-content">
+              <div className="content">
+                <div className="year">
+                  <i className="fa-regular fa-calendar"></i> May 2025 - Present
+                </div>
+                <h3>Frontend Engineer - ExpertexAI</h3>
+                <p>
+                  Architected a high-performance React 19 + Vite 7 SPA following DDD and Feature-First principles. 
+                  Led development of 19+ self-contained feature modules. Integrated Azure SignalR for real-time 
+                  updates and managed multi-region delivery via Azure Front Door & CDN.
                 </p>
               </div>
             </div>

@@ -1,0 +1,14 @@
+{
+  "name": "mahmoud-khaled-portfolio",
+  "version": "1.0.0",
+  "description": "Root package to manage frontend and backend",
+  "scripts": {
+    "install-all": "npm install && cd frontend && npm install && cd ../backend && npm install",
+    "dev": "concurrently \"npm run dev --prefix frontend\" \"npm run dev --prefix backend\"",
+    "start-frontend": "npm run dev --prefix frontend",
+    "start-backend": "npm run dev --prefix backend"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
