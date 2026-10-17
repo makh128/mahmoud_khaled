@@ -33,15 +33,26 @@ export default function About() {
         </h3>
         <div className="paragraphs">
           <p style={{ lineHeight: "28px" }}>
-            Frontend Engineer with hands-on experience building scalable,
-            production-grade React and TypeScript applications. Proven track
-            record of delivering feature-rich SPA platforms (AI Tooling, Brand
-            Monitoring, Admin Dashboards) using modern tooling including Vite,
-            TanStack React Query, Tailwind CSS, Radix UI, and Material UI.
-            Comfortable working across the full frontend stack — from
-            architecture design and API integration to CI/CD pipelines with
-            Docker and Nginx. Contributor to multi-developer projects following
-            Domain-Driven Design and Feature-First architectural patterns.
+            Senior Frontend and Mobile Engineer with hands-on experience building
+            scalable, production-grade applications with React, Next.js, React
+            Native (Expo), and TypeScript. Proven track record of delivering
+            feature-rich platforms (AI Tooling, Brand Monitoring, Ad
+            Management, Medical Booking, Admin Dashboards) using Vite, TanStack
+            React Query, Tailwind CSS, Radix UI, and Material UI. Comfortable
+            working across the full stack of frontend delivery — from
+            architecture design, monorepos (pnpm + Turborepo), and API
+            integration to real-time features with SignalR, RTL / multilingual
+            support, and push notifications on mobile. Contributor to
+            multi-developer projects following Domain-Driven Design and
+            Feature-First architectural patterns.
+          </p>
+          <p className="hidden-para">
+            I also bring DevOps experience across the whole life of a project:
+            taking it from development to production by registering and
+            configuring domains and DNS, containerizing apps with multi-stage
+            Docker builds, serving them through Nginx, setting up CI/CD with
+            GitHub Actions, and deploying to servers and cloud platforms such as
+            Azure, Vercel, and Render.
           </p>
           <p className="hidden-para">
             To streamline development and collaboration, I work with a variety

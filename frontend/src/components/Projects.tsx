@@ -14,12 +14,10 @@ export default function Projects() {
         My <span>Projects</span>
         <span className="animate scroll" style={{ ["--i" as any]: 1 }}></span>
       </h1>
-      <div className="education-row">
-        <div className="education-column">
-          <div className="education-box">
-            {ProjectsData.map((n) => (
-              <div className="education-content" key={n.name}>
-                <div className="content">
+      <div className="projects-grid">
+        {ProjectsData.map((n) => (
+          <div className="project-card" key={n.name}>
+            <div className="content">
                   <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
                     <h3>{n.name}</h3>
                     {n.url && (
@@ -83,10 +81,8 @@ export default function Projects() {
                   className="animate scroll"
                   style={{ ["--i" as any]: 1 }}
                 ></span>
-              </div>
-            ))}
           </div>
-        </div>
+        ))}
       </div>
     </section>
   );

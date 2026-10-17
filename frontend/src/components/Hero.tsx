@@ -29,13 +29,13 @@ export default function Hero() {
           <span className="animate" style={{ ["--i" as any]: 2 }}></span>
         </h1>
         <div className="text-animate">
-          <h3>Frontend Engineer</h3>
+          <h3>Senior Frontend & Mobile Engineer</h3>
           <span className="animate" style={{ ["--i" as any]: 3 }}></span>
         </div>
         <p>
-          Frontend Engineer with hands-on experience building scalable, 
-          production-grade React and TypeScript applications. Specializing in 
-          modern AI platforms, brand monitoring, and complex admin dashboards.
+          Senior Frontend and Mobile Engineer building scalable, production-grade
+          React, Next.js, and React Native applications, with DevOps experience
+          from development to domain setup and server deployment.
           <span className="animate" style={{ ["--i" as any]: 4 }}></span>
         </p>
         <div className="btn-box">

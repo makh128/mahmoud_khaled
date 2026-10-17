@@ -144,7 +144,8 @@ section {
   background-image: linear-gradient(var(--main-color), var(--main-color));
   -webkit-background-clip: text;
   background-clip: text;
-  background-position: -33rem 0;
+  background-position: 0 0;
+  background-size: 0% 100%;
   background-repeat: no-repeat;
   animation: homeBgText 6s linear infinite;
   animation-delay: 2s;
@@ -465,6 +466,62 @@ span {
   line-height: 1.5;
 }
 
+/* projects grid (two cards per row) */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 3rem;
+  align-items: stretch;
+  width: 100%;
+  max-width: 120rem;
+}
+.project-card {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+}
+.project-card .content {
+  position: relative;
+  flex: 1;
+  padding: 2rem;
+  border: 0.2rem solid var(--main-color);
+  border-radius: 0.6rem;
+  overflow: hidden;
+  z-index: 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.project-card .content::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: var(--second-bg-color);
+  z-index: -1;
+  transition: 0.5s;
+}
+.project-card .content:hover::before {
+  width: 100%;
+}
+.project-card .content:hover {
+  transform: translateY(-0.4rem);
+}
+.project-card .content h3 {
+  font-size: 2rem;
+  color: var(--main-color);
+}
+.project-card .content p,
+.project-card .content li {
+  font-size: 1.4rem;
+  line-height: 1.5;
+}
+@media (max-width: 900px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* start skills section  */
 
 .skills {
@@ -754,11 +811,11 @@ span {
   0%,
   10%,
   100% {
-    background-position: -33rem 0;
+    background-size: 0% 100%;
   }
   65%,
   85% {
-    background-position: 0 0;
+    background-size: 100% 100%;
   }
 }
 @keyframes homeCursorText {

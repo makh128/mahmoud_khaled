@@ -12,6 +12,7 @@ export default function Skills() {
         title: "FrontEnd & Frameworks",
         items: [
           "React 19",
+          "Next.js (App Router)",
           "TypeScript",
           "JavaScript (ES2022+)",
           "Redux Toolkit",
@@ -26,12 +27,25 @@ export default function Skills() {
         ],
       },
       {
+        title: "Mobile Development",
+        items: [
+          "React Native",
+          "Expo",
+          "React Navigation",
+          "Firebase Cloud Messaging",
+          "Secure Store & Keychain",
+          "i18next (Arabic RTL & English)",
+          "Zustand",
+        ],
+      },
+      {
         title: "Data & State Management",
         items: [
           "React Hook Form",
           "Zod",
           "Axios",
           "Azure SignalR",
+          "SignalR (Real-time)",
           "JWT Auth & RBAC",
           "Domain-Driven Design",
           "PostgreSQL",
@@ -58,6 +72,7 @@ export default function Skills() {
           "Vitest",
           "React Testing Library",
           "MSW (Mock Service Worker)",
+          "pnpm & Turborepo (Monorepos)",
           "Docker (Multi-stage)",
           "Nginx",
           "GitHub Actions",
@@ -65,6 +80,17 @@ export default function Skills() {
           "Render & Vercel",
           "Agile (Scrum/Kanban)",
           "Jira & ClickUp",
+        ],
+      },
+      {
+        title: "DevOps & Deployment",
+        items: [
+          "Domain Registration & DNS",
+          "Server Setup & Deployment",
+          "SSL / HTTPS",
+          "Docker & Nginx",
+          "CI/CD Pipelines",
+          "Environment & Release Management",
         ],
       },
       {
