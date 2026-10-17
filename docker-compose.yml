@@ -1,0 +1,14 @@
+services:
+  portfolio:
+    build: .
+    image: mahmoud-portfolio
+    container_name: mahmoud-portfolio
+    restart: unless-stopped
+    ports:
+      - "${HOST_PORT:-3001}:3001"
+    # Copy backend/.env.example to backend/.env and fill in the mail settings
+    env_file:
+      - ./backend/.env
+    environment:
+      NODE_ENV: production
+      PORT: "3001"

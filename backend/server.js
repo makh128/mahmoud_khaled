@@ -25,7 +25,10 @@ app.use(
 app.use(express.json());
 
 // Serve frontend static files
-const frontendDir = path.resolve(__dirname, "..");
+// FRONTEND_DIR lets deployments (e.g. Docker) point at the built `dist` folder.
+const frontendDir = process.env.FRONTEND_DIR
+  ? path.resolve(process.env.FRONTEND_DIR)
+  : path.resolve(__dirname, "..");
 app.use(express.static(frontendDir));
 
 // Health check
@@ -189,7 +192,9 @@ app.get("/", (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`Contact API listening on http://localhost:${PORT}`);
-  // Auto-open browser to the site (use dynamic import for ESM-only 'open')
+  // Auto-open browser to the site (development only)
+  if (NODE_ENV === "production") return;
+  // Use dynamic import for ESM-only 'open'
   (async () => {
     try {
       const mod = await import("open");
